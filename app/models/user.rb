@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   	# Relationships
   	has_one :customer
 
-
 	# Validations
 	validates :username, presence: true, uniqueness: { case_sensitive: false}
 	validates_inclusion_of :role, :in => %w[admin customer], message: "is not a recognized role in system"
@@ -24,4 +23,13 @@ class User < ActiveRecord::Base
 
 	# For use in authorizing with CanCan
 	ROLES = [['Administrator', :admin],['Customer',:customer]]
+
+	def role?(authorized_role)
+	return false if role.nil?
+	role.downcase.to_sym == authorized_role
+	end
+
+	# Callbacks
+	before_destroy :is_never_destroyable
+
 end
