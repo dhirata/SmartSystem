@@ -14,5 +14,14 @@ class User < ActiveRecord::Base
 	validates_confirmation_of :password, on: :create, message: "does not match"
 	validates_length_of :password, minimum: 4, message: "must be at least 4 characters long", allow_blank: true
 
-	
+
+	# Scopes
+	scope :active,       -> { where(active: true) }
+	scope :inactive,     -> { where(active: false) }
+	scope :by_role,      -> { order(:role) }
+	scope :alphabetical, -> { order(:username) }
+	scope :employees,    -> { where.not(role: 'customer') }
+
+	# For use in authorizing with CanCan
+	ROLES = [['Administrator', :admin],['Customer',:customer]]
 end
