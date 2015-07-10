@@ -25,8 +25,8 @@ class User < ActiveRecord::Base
 	ROLES = [['Administrator', :admin],['Customer',:customer]]
 
 	def role?(authorized_role)
-	return false if role.nil?
-	role.downcase.to_sym == authorized_role
+		return false if role.nil?
+		role.downcase.to_sym == authorized_role
 	end
 
 	# Callbacks
