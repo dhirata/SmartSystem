@@ -17,4 +17,12 @@ class Company < ActiveRecord::Base
 	def display_ticker
 		"#{ticker}".capitalize
 	end
+
+	def current_financial_data
+		return self.financial_data.chronological.first
+	end
+
+	def current_twitter_data
+		return self.twitter_data.chronological.first
+	end
 end
