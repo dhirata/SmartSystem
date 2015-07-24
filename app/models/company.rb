@@ -5,5 +5,9 @@ class Company < ActiveRecord::Base
 	#validations
 	validates_presence_of :ticker, :name
 
-
+	#scopes
+	scope :active,        -> { where(active: true) }
+	scope :inactive,      -> { where(active: false) }
+	scope :by_name,       -> { order(:name) }
+	scope :by_ticker,     -> { order(:ticker) }
 end
