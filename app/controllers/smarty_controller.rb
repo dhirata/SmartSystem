@@ -1,6 +1,9 @@
 class SmartyController < ApplicationController
 	before_action :set_smarty, only: [:show, :edit, :update, :destroy]
 
+	def index
+		@smarties = Smarty.order("created_at").paginate(page: params[:page]).per_page(25)
+	end
 
 	private
 	def set_smarty
