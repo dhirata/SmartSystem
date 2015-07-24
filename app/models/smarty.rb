@@ -7,6 +7,7 @@ class Smarty < ActiveRecord::Base
 	validates_inclusion_of :analysis, :in => %w[buy sell stay], message: "not a recommendation"
 
 	#scope
+	scope :chronological, -> { order(timestamp: :desc) }
 	
 	#methods
 end

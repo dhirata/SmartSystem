@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710192621) do
+ActiveRecord::Schema.define(version: 20150724181732) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150710192621) do
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "timestamp"
   end
 
   create_table "twitter_data", force: true do |t|
