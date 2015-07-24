@@ -7,6 +7,6 @@ class Smarty < ActiveRecord::Base
 	validates_inclusion_of :analysis, :in => %w[buy sell stay], message: "not a recommendation"
 
 	#scope
-
+	
 	#methods
 end
