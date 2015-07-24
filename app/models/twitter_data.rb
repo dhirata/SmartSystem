@@ -13,4 +13,8 @@ class TwitterData < ActiveRecord::Base
 	scope :by_retweets, -> { order(:retweets) }
 	scope :by_followers, -> { order(:followers) }
 	scope :chronological, -> { order(data_date: :desc) }
+
+	#methods?
+	
+
 end
