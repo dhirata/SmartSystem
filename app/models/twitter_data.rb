@@ -1,6 +1,6 @@
 class TwitterData < ActiveRecord::Base
 	# Relationship
-	has_one :company
+	belongs_to :company
 
 	#Validations
 	validates_date :data_date
@@ -15,6 +15,6 @@ class TwitterData < ActiveRecord::Base
 	scope :chronological, -> { order(data_date: :desc) }
 
 	#methods?
-	
+
 
 end
