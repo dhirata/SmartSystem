@@ -1,6 +1,8 @@
 class Company < ActiveRecord::Base
 	#relationships
 	belongs_to :smarty
+	has_many :financial_data
+	has_many :twitter_data
 
 	#validations
 	validates_presence_of :ticker, :name
