@@ -1,0 +1,2 @@
+class SmartyController < ApplicationController
+end
