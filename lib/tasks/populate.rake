@@ -82,87 +82,85 @@ namespace :db do
     #   FactoryGirl.create(:customer, user: this_user, first_name: first_name, last_name: last_name)
     # end
 
-    # all_customers = Customer.all - [mark, alex]
+    # #Step 5: for each customer associate some addresses
+    # all_customers.each do |customer|
+    #   billing = FactoryGirl.create(:address, customer: customer, 
+    #     recipient: "#{customer.proper_name}",
+    #     street_1: "#{Faker::Address.street_address}",
+    #     city: "#{Faker::Address.city}",
+    #     state: "#{Address::STATES_LIST.to_h.values.sample}",
+    #     zip: "#{rand(100000).to_s.rjust(5,"0")}",
+    #     is_billing: true)
 
-    # Step 5: for each customer associate some addresses
-#     all_customers.each do |customer|
-#       billing = FactoryGirl.create(:address, customer: customer, 
-#         recipient: "#{customer.proper_name}",
-#         street_1: "#{Faker::Address.street_address}",
-#         city: "#{Faker::Address.city}",
-#         state: "#{Address::STATES_LIST.to_h.values.sample}",
-#         zip: "#{rand(100000).to_s.rjust(5,"0")}",
-#         is_billing: true)
+    #   if rand(3).zero?
+    #     address_2 = FactoryGirl.create(:address, customer: customer,
+    #       recipient: "James T. Kirk", 
+    #       street_1: "#{Faker::Address.street_address}",
+    #       city: "#{Faker::Address.city}",
+    #       state: "#{Address::STATES_LIST.to_h.values.sample}",
+    #       zip: "#{rand(100000).to_s.rjust(5,"0")}")          
+    #   end
 
-#       if rand(3).zero?
-#         address_2 = FactoryGirl.create(:address, customer: customer,
-#           recipient: "James T. Kirk", 
-#           street_1: "#{Faker::Address.street_address}",
-#           city: "#{Faker::Address.city}",
-#           state: "#{Address::STATES_LIST.to_h.values.sample}",
-#           zip: "#{rand(100000).to_s.rjust(5,"0")}")          
-#       end
-
-#       if rand(4).zero?
-#         address_3 = FactoryGirl.create(:address, customer: customer, 
-#           recipient: "Jean Luc Picard",
-#           street_1: "#{Faker::Address.street_address}",
-#           street_2: "#{Faker::Address.secondary_address}",
-#           city: "#{Faker::Address.city}",
-#           state: "#{Address::STATES_LIST.to_h.values.sample}",
-#           zip: "#{rand(100000).to_s.rjust(5,"0")}")          
-#       end
-#     end
-#     # Step 6: Create some orders for each customer
-#     # create credit cards to be used for order payments
-#     next_year = Date.today.year + 1
-#     credit_cards = [
-#       CreditCard.new(4123456789012, next_year, 12),
-#       CreditCard.new(4123456789012345, next_year, 12),
-#       CreditCard.new(5123456789012345, next_year, 12),
-#       CreditCard.new(5412345678901234, next_year, 12),
-#       CreditCard.new(6512345678901234, next_year, 12),
-#       CreditCard.new(6011123456789012, next_year, 12),
-#       CreditCard.new(30012345678901, next_year, 12),
-#       CreditCard.new(30312345678901, next_year, 12),
-#       CreditCard.new(341234567890123, next_year, 12),
-#       CreditCard.new(371234567890123, next_year, 12)
-#     ]
-#     all_customers.each do |customer|
-#       c_address_ids = customer.addresses.map(&:id)
-#       customer_selections = all_items.shuffle
-#       [1,1,1,2,2,2,2,3,3,3,3,4,4,5,6,7,9,10,12].sample.times do |i|
-#       # (1..12).to_a.sample.times do |i|
-#         order = Order.new
-#         order.customer_id = customer.id
-#         order.address_id = c_address_ids.sample
-#         order.date = (5.months.ago.to_date..2.days.ago.to_date).to_a.sample
-#         order.save!
-#         total = 0
-#         [1,1,2,2,2,3,3,4,5,6].sample.times do |j|
-#           this_item = customer_selections.pop
-#           oi = OrderItem.new
-#           oi.item_id = this_item.id
-#           oi.order_id = order.id
-#           oi.quantity = [1,2,3,4].sample
-#           oi.save!
-#           total += oi.subtotal(order.date)
-#         end
-#         # record total and payment
-#         total += order.shipping_costs
-#         order.update_attribute(:grand_total, total)
-#         # set credit card info
-#         credit_card = credit_cards.sample
-#         order.credit_card_number = credit_card.number
-#         order.expiration_year = credit_card.expiration_year
-#         order.expiration_month = credit_card.expiration_month
-#         # pay
-#         order.pay
-#         # ship the items
-#         order.order_items.each{|oi2| oi2.shipped_on = order.date + 1; oi2.save! }
-#         # reset the selection options
-#         customer_selections = all_items.shuffle
-#       end
-#     end
-#   end
-# end
+    #   if rand(4).zero?
+    #     address_3 = FactoryGirl.create(:address, customer: customer, 
+    #       recipient: "Jean Luc Picard",
+    #       street_1: "#{Faker::Address.street_address}",
+    #       street_2: "#{Faker::Address.secondary_address}",
+    #       city: "#{Faker::Address.city}",
+    #       state: "#{Address::STATES_LIST.to_h.values.sample}",
+    #       zip: "#{rand(100000).to_s.rjust(5,"0")}")          
+    #   end
+    # end
+    # # Step 6: Create some orders for each customer
+    # # create credit cards to be used for order payments
+    # next_year = Date.today.year + 1
+    # credit_cards = [
+    #   CreditCard.new(4123456789012, next_year, 12),
+    #   CreditCard.new(4123456789012345, next_year, 12),
+    #   CreditCard.new(5123456789012345, next_year, 12),
+    #   CreditCard.new(5412345678901234, next_year, 12),
+    #   CreditCard.new(6512345678901234, next_year, 12),
+    #   CreditCard.new(6011123456789012, next_year, 12),
+    #   CreditCard.new(30012345678901, next_year, 12),
+    #   CreditCard.new(30312345678901, next_year, 12),
+    #   CreditCard.new(341234567890123, next_year, 12),
+    #   CreditCard.new(371234567890123, next_year, 12)
+    # ]
+    # all_customers.each do |customer|
+    #   c_address_ids = customer.addresses.map(&:id)
+    #   customer_selections = all_items.shuffle
+    #   [1,1,1,2,2,2,2,3,3,3,3,4,4,5,6,7,9,10,12].sample.times do |i|
+    #   # (1..12).to_a.sample.times do |i|
+    #     order = Order.new
+    #     order.customer_id = customer.id
+    #     order.address_id = c_address_ids.sample
+    #     order.date = (5.months.ago.to_date..2.days.ago.to_date).to_a.sample
+    #     order.save!
+    #     total = 0
+    #     [1,1,2,2,2,3,3,4,5,6].sample.times do |j|
+    #       this_item = customer_selections.pop
+    #       oi = OrderItem.new
+    #       oi.item_id = this_item.id
+    #       oi.order_id = order.id
+    #       oi.quantity = [1,2,3,4].sample
+    #       oi.save!
+    #       total += oi.subtotal(order.date)
+    #     end
+    #     # record total and payment
+    #     total += order.shipping_costs
+    #     order.update_attribute(:grand_total, total)
+    #     # set credit card info
+    #     credit_card = credit_cards.sample
+    #     order.credit_card_number = credit_card.number
+    #     order.expiration_year = credit_card.expiration_year
+    #     order.expiration_month = credit_card.expiration_month
+    #     # pay
+    #     order.pay
+    #     # ship the items
+    #     order.order_items.each{|oi2| oi2.shipped_on = order.date + 1; oi2.save! }
+    #     # reset the selection options
+    #     customer_selections = all_items.shuffle
+    #   end
+    # end
+  end
+end
