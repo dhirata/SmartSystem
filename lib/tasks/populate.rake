@@ -21,7 +21,7 @@ namespace :db do
     derek_user.password_confirmation = "password"
     derek_user.role = "admin"
     derek_user.save!
-    derek = customer.new
+    derek = Customer.new
     derek.first_name = "Derek"
     derek.last_name = "Hirata"
     derek.email = "dhirata@andrew.cmu.edu"
