@@ -66,13 +66,15 @@ namespace :db do
       customer: derek,
       company: apple,
       description: "Due to the inevitable release of the new iPhone, Apple's stock is primed to grow. Buy now.",
-      analysis: "buy")
+      analysis: "buy",
+      timestamp: Date.today)
 
     derek_smarty2 = FactoryGirl.create(:smarty, 
       customer: derek,
       company: google,
       description: "Despite new acquisitions, Google has not made any huge moves. Hold steady for now.",
-      analysis: "stay")
+      analysis: "stay",
+      timestamp: Date.today)
 
     # Step 4: Create 120 customers and their associated users
     # 120.times do

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150724181732) do
     t.string   "name"
     t.text     "description"
     t.string   "ticker"
-    t.boolean  "active",      default: true
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150724181732) do
     t.string   "email"
     t.string   "phone"
     t.integer  "user_id"
-    t.boolean  "active",      default: true
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20150724181732) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "role"
-    t.boolean  "active",      default: true
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
