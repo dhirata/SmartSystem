@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :twitter_data
   resources :smarties
 
+  get 'home' => 'home#home', as: :home
 
-  #root :to => 'home#home'  
+  root :to => 'home#home'  
 
 
   # Last route in routes.rb that essentially handles routing errors
