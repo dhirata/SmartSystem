@@ -11,8 +11,24 @@
     </head>
 
     <body>
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+    	<% @smarties.each do |smarty| %>
+			<div class = "row">
+				<div class = "col s12 m8">
+					<div class = "card white">
+						<div class = "card-content blue-grey-text text-darken-4">
+							<span class="card-title blue-grey-text text-darken-4"><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]</span>
+	          				<p><%= smarty.description %></p>
+						</div>
+						<div class="card-action">
+	          				<a href="#" class = "blue-text">Download PDF</a>
+	        				<a href="#" class = "blue-text">Download Excel</a>
+	      				</div>
+					</div>
+				</div>
+	    	</div>
+    	<% end %>
+      	<!--Import jQuery before materialize.js-->
+     	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      	<script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
   </html>
