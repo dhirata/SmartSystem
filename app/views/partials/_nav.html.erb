@@ -1,8 +1,14 @@
 <nav class = "blue darken-1">
 	<div class = "nav-wrapper">
 		<div class = "container">
-			<a href="#" class="brand-logo">Logo</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<a href="home" class="brand-logo">Smart</a>
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><%= link_to "Home", home_path %></li>
+				<li><%= link_to "Companies", companies_path %></li>
+				<li><%= link_to "Your account", customers_path %></li>
+			</ul>
+			<ul class="side-nav" id="mobile-demo">
 				<li><%= link_to "Home", home_path %></li>
 				<li><%= link_to "Companies", companies_path %></li>
 				<li><%= link_to "Your account", customers_path %></li>
@@ -10,3 +16,4 @@
 		</div>
 </div>
 </nav>
+
