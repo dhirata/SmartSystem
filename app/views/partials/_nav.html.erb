@@ -1,19 +1,27 @@
-<nav class = "blue darken-3">
-	<div class = "nav-wrapper">
-		<div class = "container">
-			<a href="home" class="brand-logo">Smart</a>
-			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-			<ul class="right hide-on-med-and-down">
-				<li><%= link_to "Home", home_path %></li>
-				<li><%= link_to "Companies", companies_path %></li>
-				<li><%= link_to "Your account", customers_path %></li>
-			</ul>
-			<ul class="side-nav" id="mobile-demo">
-				<li><%= link_to "Home", home_path %></li>
-				<li><%= link_to "Companies", companies_path %></li>
-				<li><%= link_to "Your account", customers_path %></li>
-			</ul>
+<div class = "navbar">
+	<nav class = "blue darken-3">
+		<div class = "nav-wrapper">
+			<div class = "container">
+				<a href="home" class="brand-logo">Smart</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li>
+						<div class="input-field">
+						<input id="search" type="search" required>
+						<label for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+						</div>
+					</li>
+					<li><%= link_to "Home", home_path %></li>
+					<li><%= link_to "Companies", companies_path %></li>
+					<li><%= link_to "Settings", customers_path %></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><%= link_to "Home", home_path %></li>
+					<li><%= link_to "Companies", companies_path %></li>
+					<li><%= link_to "Settings", customers_path %></li>
+				</ul>
+			</div>
 		</div>
+	</nav>
 </div>
-</nav>
-
