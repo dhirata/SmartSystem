@@ -75,9 +75,18 @@ namespace :db do
       customer: derek,
       company: google,
       description: "Despite new acquisitions, Google has not made any huge moves. Hold steady for now.",
-      analysis: "stay",
+      analysis: "hold",
       timestamp: Date.today,
       category: "Acquisition"
+    )
+
+    derek_smarty3 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: google,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat eros tincidunt cursus auctor. Quisque a erat vel sapien feugiat posuere.",
+      analysis: "sell",
+      timestamp: Date.today,
+      category: "Executive"
     )
 
     # Step 4: Create 120 customers and their associated users

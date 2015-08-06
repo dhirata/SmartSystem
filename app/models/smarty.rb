@@ -4,7 +4,7 @@ class Smarty < ActiveRecord::Base
 	belongs_to :company
 
 	#validations
-	validates_inclusion_of :analysis, :in => %w[buy sell stay], message: "not a recommendation"
+	validates_inclusion_of :analysis, :in => %w[buy sell hold], message: "not a recommendation"
 
 	#scope
 	scope :chronological, -> { order(timestamp: :desc) }

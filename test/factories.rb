@@ -44,6 +44,6 @@ FactoryGirl.define do
 		association :company
 		association :customer
 		description "After a significant acquisition, this company is on the up and up."
-		analysis "stay" 
+		analysis "hold" 
 	end
 end
