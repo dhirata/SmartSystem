@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TwitterDataTest < ActiveSupport::TestCase
+class TwitterDatumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

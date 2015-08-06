@@ -1,4 +1,4 @@
-class TwitterData < ActiveRecord::Base
+class TwitterDatum < ActiveRecord::Base
 	# Relationship
 	belongs_to :company
 
@@ -15,6 +15,5 @@ class TwitterData < ActiveRecord::Base
 	scope :chronological, -> { order(data_date: :desc) }
 
 	#methods?
-
 
 end
