@@ -65,6 +65,7 @@ namespace :db do
     derek_smarty1 = FactoryGirl.create(:smarty, 
       customer: derek,
       company: apple,
+      category: "Product",
       description: "Due to the inevitable release of the new iPhone, Apple's stock is primed to grow. Buy now.",
       analysis: "buy",
       timestamp: Date.today)
@@ -72,6 +73,7 @@ namespace :db do
     derek_smarty2 = FactoryGirl.create(:smarty, 
       customer: derek,
       company: google,
+      category: "Acquisition",
       description: "Despite new acquisitions, Google has not made any huge moves. Hold steady for now.",
       analysis: "stay",
       timestamp: Date.today)
