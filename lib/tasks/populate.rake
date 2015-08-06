@@ -46,20 +46,20 @@ namespace :db do
     companies = [google, apple]
 
     # Step 3: For each company, create a set of stock prices
-    gf1 = FactoryGirl.create(:financial_data, company: google, stock_price: 624.37, data_date: 3.days.ago.to_date)
-    gf2 = FactoryGirl.create(:financial_data, company: google, stock_price: 627.97, data_date: 2.days.ago.to_date)
-    gf3 = FactoryGirl.create(:financial_data, company: google, stock_price: 628.00, data_date: 1.days.ago.to_date)
-    gf4 = FactoryGirl.create(:financial_data, company: google, stock_price: 631.93, data_date: 0.days.ago.to_date)
+    gf1 = FactoryGirl.create(:financial_datum, company: google, stock_price: 624.37, data_date: 3.days.ago.to_date)
+    gf2 = FactoryGirl.create(:financial_datum, company: google, stock_price: 627.97, data_date: 2.days.ago.to_date)
+    gf3 = FactoryGirl.create(:financial_datum, company: google, stock_price: 628.00, data_date: 1.days.ago.to_date)
+    gf4 = FactoryGirl.create(:financial_datum, company: google, stock_price: 631.93, data_date: 0.days.ago.to_date)
 
-    af1 = FactoryGirl.create(:financial_data, company: apple, stock_price: 124.48, data_date: 3.days.ago.to_date)
-    af2 = FactoryGirl.create(:financial_data, company: apple, stock_price: 122.83, data_date: 2.days.ago.to_date)
-    af3 = FactoryGirl.create(:financial_data, company: apple, stock_price: 123.32, data_date: 1.days.ago.to_date)
-    af4 = FactoryGirl.create(:financial_data, company: apple, stock_price: 122.99, data_date: 0.days.ago.to_date)
+    af1 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 124.48, data_date: 3.days.ago.to_date)
+    af2 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 122.83, data_date: 2.days.ago.to_date)
+    af3 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 123.32, data_date: 1.days.ago.to_date)
+    af4 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 122.99, data_date: 0.days.ago.to_date)
 
     # Step 4: For each company, create some twitter data
-    gt1 = FactoryGirl.create(:twitter_data, company: google, data_date: Date.today, favorites: 367, retweets: 6956, followers: 12100000, polarity: 0.78)
+    gt1 = FactoryGirl.create(:twitter_datum, company: google, data_date: Date.today, favorites: 367, retweets: 6956, followers: 12100000, polarity: 0.78)
 
-    at1 = FactoryGirl.create(:twitter_data, company: apple, data_date: Date.today, favorites: 500, retweets: 7000, followers: 13000000, polarity: 0.52)
+    at1 = FactoryGirl.create(:twitter_datum, company: apple, data_date: Date.today, favorites: 500, retweets: 7000, followers: 13000000, polarity: 0.52)
 
     # Step 5: Create Smarties
     derek_smarty1 = FactoryGirl.create(:smarty, 
