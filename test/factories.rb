@@ -25,13 +25,13 @@ FactoryGirl.define do
 		active true
 	end
 
-	factory :financial_data do 
+	factory :financial_datum do 
 		stock_price 42
 		data_date Date.today
 		association :company
 	end 
 
-	factory :twitter_data do 
+	factory :twitter_datum do 
 		data_date Date.today
 		favorites 100
 		retweets 1000

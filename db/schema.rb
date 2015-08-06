@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724181732) do
+ActiveRecord::Schema.define(version: 20150806034714) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 20150724181732) do
   end
 
   create_table "twitter_data", force: true do |t|
-    t.integer  "company_id"
     t.date     "data_date"
     t.integer  "favorites"
     t.integer  "retweets"
     t.integer  "followers"
     t.float    "polarity"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
