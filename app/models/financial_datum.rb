@@ -1,4 +1,4 @@
-class FinancialData < ActiveRecord::Base 
+class FinancialDatum < ActiveRecord::Base
 	#relationship
 	belongs_to :company
 

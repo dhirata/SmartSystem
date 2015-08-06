@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FinancialDataTest < ActiveSupport::TestCase
+class FinancialDatumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
