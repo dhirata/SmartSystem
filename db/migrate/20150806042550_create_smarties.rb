@@ -5,6 +5,8 @@ class CreateSmarties < ActiveRecord::Migration
       t.text :description
       t.string :analysis
       t.integer :company_id
+      t.datetime :timestamp
+      t.string :category
 
       t.timestamps
     end

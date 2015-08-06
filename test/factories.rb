@@ -43,7 +43,6 @@ FactoryGirl.define do
 	factory :smarty do
 		association :company
 		association :customer
-		category "product"
 		description "After a significant acquisition, this company is on the up and up."
 		analysis "stay" 
 	end
