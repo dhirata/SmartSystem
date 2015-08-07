@@ -11,11 +11,13 @@
 		<% end %>
 		<div class = "card white">
 			<div class = "card-content blue-grey-text text-darken-4">
-				<span class="card-title activator blue-grey-text text-darken-4"><i class = "material-icons medium left">work</i><%= smarty.company.name %> [<%= smarty.company.ticker %> $<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i></span>
-				<br />
+				<span class="card-title activator blue-grey-text text-darken-4"><i class = "material-icons medium left">	work</i><%= smarty.company.name %> [<%= smarty.company.ticker %> $<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i>
+				</span>
+				<br/>
 				<br/>
         		<p><b>Category: </b><%= smarty.category %></p>
         		<p><b>Analysis: <font color = <%=fontcolor%>><%= smarty.analysis.upcase %></font></b></p>
+        		<p><b>Created At: </b><%= smarty.created_at %></p>
   				<p><%= smarty.description %></p>
 			</div>
 			<div class = "card-reveal">
@@ -24,9 +26,11 @@
 			  <i class = "material-icons large ">trending_up</i>
 			</div>
 			<div class="card-action">
-  				<a href="#" class = "blue-text">Download PDF</a>
-				<a href="#" class = "blue-text">Download Excel</a>
-				 <a href="#" class = "blue-text">Save Smarty For Later</a>
+				<div class =  "row center-align">
+	  				<a href="#" class = "blue-text">Download PDF</a>
+					<a href="#" class = "blue-text">Download Excel</a>
+					<a href="#" class = "blue-text">Save Smartie For Later</a>
+				</div>
 			</div>
 		</div>
 	<% end %>

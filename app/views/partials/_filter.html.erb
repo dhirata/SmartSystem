@@ -2,9 +2,38 @@
 	<div class = "card hoverable white">
 		<div class = "card-content blue-grey-text text-darken-4">
 			<span class="card-title blue-grey-text text-darken-4">Filter Smarties</span>
+			<br />
+			<% if !@filter_params.empty? %>
+				<p><b>Filters Applied</b></p>
+				<% @filter_params.each do |param| %>
+					<%= param %>
+					<br/> 
+				<% end %>
+			<% end %>
 		</div>
 		<div class="card-action">
+			<p><b>Select Filters</b></p>
 
+			  <!-- Dropdown Trigger -->
+		  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown1'>Companies</a>
+
+		  <!-- Dropdown Structure -->		  		
+		  	<ul id='dropdown1' class='dropdown-content blue-text text-light'>
+		  		<% @companies.each do |company| %>
+		    		<li><a href="#!" class = "blue-text"><%= company.name %></a></li>
+		    	<% end %>
+		  	</ul>
+
+		  	<br/>
+		  	<!-- Dropdown Trigger -->
+		  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown2'>Categories</a>
+
+		  <!-- Dropdown Structure -->
+		  	<ul id='dropdown2' class='dropdown-content blue-text text-light'>
+		    	<li><a href="#!" class = "blue-text">one</a></li>
+		    	<li><a href="#!" class = "blue-text">two</a></li>
+		    	<li><a href="#!" class = "blue-text">three</a></li>
+		  	</ul>
 		</div>
 	</div>
 </div>
