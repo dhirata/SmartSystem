@@ -1,7 +1,19 @@
 <div class = "col s4">
 	<div class = "card white">
 		<div class = "card-content blue-grey-text text-darken-4">
-			<span class="card-title blue-grey-text text-darken-4"> <i class = "material-icons medium left">perm_identity</i><%= @smarties.first.customer.proper_name %></span>
+			<span class="card-title blue-grey-text text-darken-4"> <i class = "material-icons medium left">perm_identity</i><%= @smarties.first.customer.proper_name %><br/>(<%= @smarties.first.customer.user.username %>)</span>
+		</div>
+		<div class="card-action">
+			<div class = "row">
+				<div class = "col s6 center-align">
+					<p><b>Smarties </b><p>
+  					<a href="#" class = "blue-text"><%= @smarties.size %></a>
+  				</div>
+  				<div class = "col s6 center-align">
+  					<p><b>Following </b></p>
+					<a href="#" class = "blue-text"><%= @company_count %></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
