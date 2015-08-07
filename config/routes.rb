@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'home' => 'home#home', as: :home
 
-  root :to => 'home#home'  
+  root :to => 'home#home'
 
 
   # Last route in routes.rb that essentially handles routing errors

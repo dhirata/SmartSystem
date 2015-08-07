@@ -1,31 +1,29 @@
-<% @smarties.each do |smarty| %>
-	<% if smarty.analysis == "buy" %>
-		<%fontcolor = "green"%>
-	<% elsif smarty.analysis == "hold" %>
-		<% fontcolor = "blue" %>
-	<% elsif smarty.analysis == "sell" %>
-		<% fontcolor = "red" %>
-	<% else %>
-		<% fontcolor = "black" %>
-	<% end %>
-	<div class = "row">
-		<div class = "col s12 m8">
-			<div class = "card white">
-				<div class = "card-content blue-grey-text text-darken-4">
-					<span class="card-title activator blue-grey-text text-darken-4"><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i></span>
-	        <p><b>Category: </b><%= smarty.category %></p>
-	        <p><b>Analysis: </b><font color = <%=fontcolor%>><%= smarty.analysis.upcase %></font></p>
-	  				<p><%= smarty.description %></p>
-				</div>
-	<div class = "card-reveal">
-	  <span class = "card-title blue-grey-text text-darken-4"><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">close</i></span>
-	  <p>TODO: DUMP DATA HERE maybe graphs too?</p>
-	</div>
-				<div class="card-action">
-	  				<a href="#" class = "blue-text">Download PDF</a>
-					<a href="#" class = "blue-text">Download Excel</a>
-					</div>
+<div class = "col s8">
+	<% @smarties.each do |smarty| %>
+		<% if smarty.analysis == "buy" %>
+			<%fontcolor = "green"%>
+		<% elsif smarty.analysis == "hold" %>
+			<% fontcolor = "blue" %>
+		<% elsif smarty.analysis == "sell" %>
+			<% fontcolor = "red" %>
+		<% else %>
+			<% fontcolor = "black" %>
+		<% end %>
+		<div class = "card white">
+			<div class = "card-content blue-grey-text text-darken-4">
+				<span class="card-title activator blue-grey-text text-darken-4"><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i></span>
+        		<p><b>Category: </b><%= smarty.category %></p>
+        		<p><b>Analysis: </b><font color = <%=fontcolor%>><%= smarty.analysis.upcase %></font></p>
+  				<p><%= smarty.description %></p>
+			</div>
+			<div class = "card-reveal">
+			  <span class = "card-title blue-grey-text text-darken-4"><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">close</i></span>
+			  <p>TODO: DUMP DATA HERE maybe graphs too?</p>
+			</div>
+			<div class="card-action">
+  				<a href="#" class = "blue-text">Download PDF</a>
+				<a href="#" class = "blue-text">Download Excel</a>
 			</div>
 		</div>
-	</div>
-<% end %>
+	<% end %>
+</div>
