@@ -3,37 +3,43 @@
 		<div class = "card-content blue-grey-text text-darken-4">
 			<span class="card-title blue-grey-text text-darken-4">Filter Smarties</span>
 			<br />
-			<% if !@filter_params.empty? %>
+			<% if !(@filter_category_params.empty? and @filter_company_params.empty?) %>
 				<p><b>Filters Applied</b></p>
-				<% @filter_params.each do |param| %>
+				<% @filter_company_params.each do |param| %>
+					<%= param %>
+					<br/> 
+				<% end %>
+				<% @filter_category_params.each do |param| %>
 					<%= param %>
 					<br/> 
 				<% end %>
 			<% end %>
 		</div>
 		<div class="card-action">
-			<p><b>Select Filters</b></p>
-
-			  <!-- Dropdown Trigger -->
-		  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown1'>Companies</a>
-
-		  <!-- Dropdown Structure -->		  		
-		  	<ul id='dropdown1' class='dropdown-content blue-text text-light'>
-		  		<% @companies.each do |company| %>
-		    		<li><a href="#!" class = "blue-text"><%= company.name %></a></li>
-		    	<% end %>
-		  	</ul>
-
-		  	<br/>
-		  	<!-- Dropdown Trigger -->
-		  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown2'>Categories</a>
-
-		  <!-- Dropdown Structure -->
-		  	<ul id='dropdown2' class='dropdown-content blue-text text-light'>
-		    	<li><a href="#!" class = "blue-text">one</a></li>
-		    	<li><a href="#!" class = "blue-text">two</a></li>
-		    	<li><a href="#!" class = "blue-text">three</a></li>
-		  	</ul>
+			<% if !(@filter_category_params.empty? and @filter_company_params.empty?) %>
+				<p><b>Select Filters</b></p>
+			<% end %>
+			<% if @filter_company_params.empty? %>
+				<!-- Dropdown Trigger -->
+			  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown1'>Companies</a>
+			 	<!-- Dropdown Structure -->		  		
+			  	<ul id='dropdown1' class='dropdown-content blue-text text-light'>
+			  		<% @companies.each do |company| %>
+			    		<li><a href="/home" class = "blue-text"><%= company.name %></a></li>
+			    	<% end %>
+			  	</ul>
+			  	<br/>
+		  	<% end %>
+		  	<% if @filter_category_params.empty? %>
+			  	<!-- Dropdown Trigger -->
+			  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown2'>Categories</a>
+			  	<!-- Dropdown Structure -->
+			  	<ul id='dropdown2' class='dropdown-content blue-text text-light'>
+			  		<% @all_categories.each do |category| %>
+			    		<li><a href= "/home" class = "blue-text"><%= category %></a></li>
+			    	<% end %>
+			  	</ul>
+		  	<% end %>
 		</div>
 	</div>
 </div>
