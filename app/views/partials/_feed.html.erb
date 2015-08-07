@@ -11,7 +11,9 @@
 		<% end %>
 		<div class = "card white">
 			<div class = "card-content blue-grey-text text-darken-4">
-				<span class="card-title activator blue-grey-text text-darken-4"><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i></span>
+				<span class="card-title activator blue-grey-text text-darken-4"><i class = "material-icons medium left">work</i><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i></span>
+				<br />
+				<br/>
         		<p><b>Category: </b><%= smarty.category %></p>
         		<p><b>Analysis: </b><font color = <%=fontcolor%>><%= smarty.analysis.upcase %></font></p>
   				<p><%= smarty.description %></p>
