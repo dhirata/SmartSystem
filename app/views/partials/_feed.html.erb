@@ -9,9 +9,23 @@
 		<% else %>
 			<% fontcolor = "black" %>
 		<% end %>
+		
+		<% if smarty.company.name == "Apple" %>
+			<% icon = "appleIcon.png" %>
+		<% elsif smarty.company.name == "Amazon" %>
+			<% icon = "amazonIcon.png" %>
+		<% elsif smarty.company.name == "Chipotle" %>
+			<% icon = "chipotleIcon.png" %>
+		<% elsif smarty.company.name == "Disney" %>
+			<% icon = "disneyIcon.png" %>
+		<% elsif smarty.company.name == "Netflix" %>
+			<% icon = "netflixIcon.png" %>
+		<% elsif smarty.company.name == "McDonalds" %>
+			<% icon = "mcdonaldsIcon.png" %>
+		<% end %>
 		<div class = "card white">
 			<div class = "card-content blue-grey-text text-darken-4">
-				<span class="card-title activator blue-grey-text text-darken-4"><i class = "material-icons medium left">	work</i><%= smarty.company.name %> [<%= smarty.company.ticker %> $<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i>
+				<span class="card-title activator blue-grey-text text-darken-4"><img src=<%= icon %> alt="" class = "circle responsive-img icon left"><%= smarty.company.name %> [<%= smarty.company.ticker %> $<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i>
 				</span>
 				<br/>
 				<br/>
