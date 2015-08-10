@@ -8,6 +8,7 @@ class Smarty < ActiveRecord::Base
 
 	#scope
 	scope :chronological, -> { order(timestamp: :desc) }
-	
+	scope :appl, -> { where(company_id: 2)}
+	scope :product, -> { where(category: "Product") }
 	#methods
 end

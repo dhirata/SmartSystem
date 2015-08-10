@@ -25,7 +25,7 @@
 			 	<!-- Dropdown Structure -->		  		
 			  	<ul id='dropdown1' class='dropdown-content blue-text text-light'>
 			  		<% @companies.each do |company| %>
-			    		<li><a href="/home" class = "blue-text"><%= company.name %></a></li>
+			    		<li><a href="filterCompany" class = "blue-text"><%= company.name %></a></li>
 			    	<% end %>
 			  	</ul>
 			  	<br/>
@@ -36,9 +36,12 @@
 			  	<!-- Dropdown Structure -->
 			  	<ul id='dropdown2' class='dropdown-content blue-text text-light'>
 			  		<% @all_categories.each do |category| %>
-			    		<li><a href= "/home" class = "blue-text"><%= category %></a></li>
+			    		<li><a href= "filterCategory" class = "blue-text"><%= category %></a></li>
 			    	<% end %>
 			  	</ul>
+		  	<% end %>
+		  	<% if !(@filter_category_params.empty? and @filter_company_params.empty?) %>
+		  		<a class='dropdown-button btn light-blue white-text' href='home'>Reset Filters</a>
 		  	<% end %>
 		</div>
 	</div>
