@@ -86,10 +86,10 @@ namespace :db do
     af3 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 123.32, data_date: 1.days.ago.to_date)
     af4 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 122.99, data_date: 0.days.ago.to_date)
 
-    amf1 = FactoryGirl.create(:financial_datum, company: amazon, stock_price: 524.00, data_date: 0.days.ago.to_date)
-    df1 = FactoryGirl.create(:financial_datum, company: disney, stock_price: 111.00, data_date: 0.days.ago.to_date)
+    amf1 = FactoryGirl.create(:financial_datum, company: amazon, stock_price: 524.02, data_date: 0.days.ago.to_date)
+    df1 = FactoryGirl.create(:financial_datum, company: disney, stock_price: 111.01, data_date: 0.days.ago.to_date)
     nf1 = FactoryGirl.create(:financial_datum, company: netflix, stock_price: 123.03, data_date: 0.days.ago.to_date)
-    cf1 = FactoryGirl.create(:financial_datum, company: chipotle, stock_price: 743.90, data_date: 0.days.ago.to_date)
+    cf1 = FactoryGirl.create(:financial_datum, company: chipotle, stock_price: 743.93, data_date: 0.days.ago.to_date)
     mf1 = FactoryGirl.create(:financial_datum, company: mcdonalds, stock_price: 99.36, data_date: 0.days.ago.to_date)
 
     # Step 4: For each company, create some twitter data
@@ -139,6 +139,95 @@ namespace :db do
       category: "Executive"
     )
 
+    derek_smarty5 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: amazon,
+      description: "Amazon gives customers new subscription based service that allows users to receive gift packages.",
+      analysis: "buy",
+      timestamp: DateTime.new(2015, 8, 11, 13, 32, 51),
+      category: "Product"
+    )
+
+    derek_smarty6 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: amazon,
+      description: "Amazon lets go of lead managers for development lab.",
+      analysis: "sell",
+      timestamp: DateTime.new(2015, 8, 9, 1, 53, 12),
+      category: "Miscellaneous"
+    )
+
+    derek_smarty7 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: disney,
+      description: "New Pixar movie announced featuring Tom Cruise",
+      analysis: "buy",
+      timestamp: DateTime.new(2015, 8, 9, 3, 34, 15),
+      category: "Product"
+    )
+
+    derek_smarty8 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: disney,
+      description: "Starwars movie set to be delayed for at least a few months.",
+      analysis: "hold",
+      timestamp: DateTime.new(2015, 8, 11, 12, 31, 59),
+      category: "Product"
+    )
+
+    derek_smarty9 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: netflix,
+      description: "Seinfeld to be featured on Netflix.",
+      analysis: "buy",
+      timestamp: DateTime.new(2015, 8, 11, 3, 43, 19),
+      category: "Miscellaneous"
+    )
+
+    derek_smarty10 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: netflix,
+      description: "CEO of Netflix gives speech at Carnegie Mellon University",
+      analysis: "buy",
+      timestamp: DateTime.new(2015, 8, 10, 15, 45, 04),
+      category: "Executive"
+    )
+
+    derek_smarty11 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: chipotle,
+      description: "Chipotle announces nationwide refill of carnitas.",
+      analysis: "hold",
+      timestamp: DateTime.new(2015, 8, 11, 12, 32, 13),
+      category: "Product"
+    )
+
+    derek_smarty12 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: chipotle,
+      description: "Chipotle acquires small, Midwest sitdown restuarant chain.",
+      analysis: "sell",
+      timestamp: DateTime.new(2015, 8, 10, 23, 14, 07),
+      category: "Acquisition"
+    )
+
+    derek_smarty13 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: mcdonalds,
+      description: "E Coli breakout stemming from McDonald's suppliers. Outbreak has affects thousands.",
+      analysis: "sell",
+      timestamp: DateTime.new(2015, 8, 11, 10, 37, 38),
+      category: "Miscellaneous"
+    )
+
+    derek_smarty14 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: mcdonalds,
+      description: "McDonald's publicly announces sponsorship of Special Olympics.",
+      analysis: "hold",
+      timestamp: DateTime.new(2015, 8, 10, 21, 15, 43),
+      category: "Miscellaneous"
+    )
 
     # derek_smarty2 = FactoryGirl.create(:smarty, 
     #   customer: derek,
