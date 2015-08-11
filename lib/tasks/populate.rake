@@ -180,7 +180,7 @@ namespace :db do
       company: netflix,
       description: "Seinfeld to be featured on Netflix.",
       analysis: "buy",
-      timestamp: DateTime.new(2015, 8, 11, 3, 43, 19),
+      timestamp: DateTime.new(2015, 8, 11, 15, 43, 19),
       category: "Miscellaneous"
     )
 
@@ -198,7 +198,7 @@ namespace :db do
       company: chipotle,
       description: "Chipotle announces nationwide refill of carnitas.",
       analysis: "hold",
-      timestamp: DateTime.new(2015, 8, 11, 12, 32, 13),
+      timestamp: DateTime.new(2015, 8, 11, 13, 32, 13),
       category: "Product"
     )
 
