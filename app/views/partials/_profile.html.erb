@@ -1,7 +1,7 @@
 <div class = "col s4">
 	<div class = "card-panel hoverable white">
 		<div class = "card-content blue-grey-text text-darken-4">
-			<span class="card-title blue-grey-text text-darken-4"> <i class = "material-icons medium left">perm_identity</i><%= @smarties.first.customer.proper_name %><br/>(<%= @smarties.first.customer.user.username %>)</span>
+			<span class="card-title blue-grey-text text-darken-4"><img src="derp.png" alt="" class = "circle responsive-img icon left"><%= @smarties.first.customer.proper_name %><br/>(<%= @smarties.first.customer.user.username %>)</span>
 			<br />
 			<%= link_to "Edit Your Profile", users_path, {:style=>'color:#2196f3;', :class => "css_class"} %>
 		</div>

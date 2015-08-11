@@ -9,18 +9,24 @@
 		<% else %>
 			<% fontcolor = "black" %>
 		<% end %>
-		
+
 		<% if smarty.company.name == "Apple" %>
 			<% icon = "appleIcon.png" %>
+			<% graph = "AppleData.png" %>
 		<% elsif smarty.company.name == "Amazon" %>
 			<% icon = "amazonIcon.png" %>
+			<% graph = "AmazonData.png" %>
 		<% elsif smarty.company.name == "Chipotle" %>
 			<% icon = "chipotleIcon.png" %>
+			<% graph = "ChipotleData.png" %>
 		<% elsif smarty.company.name == "Disney" %>
 			<% icon = "disneyIcon.png" %>
+			<% graph = "DisneyData.png" %>
 		<% elsif smarty.company.name == "Netflix" %>
 			<% icon = "netflixIcon.png" %>
+			<% graph = "NetflixData.png" %>
 		<% elsif smarty.company.name == "McDonalds" %>
+			<% graph = "McDonaldsData.png" %>
 			<% icon = "mcdonaldsIcon.png" %>
 		<% end %>
 		<div class = "card white">
@@ -36,6 +42,7 @@
 			</div>
 			<div class = "card-reveal">
 			  <span class = "card-title blue-grey-text text-darken-4"><%= smarty.company.name %> [<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">close</i></span>
+			  <img src = <%= graph %> alt = "" class = "responsive-img center-align">
 			  <p>TODO: DUMP DATA HERE maybe graphs too?</p>
 			  <i class = "material-icons large ">trending_up</i>
 			</div>
