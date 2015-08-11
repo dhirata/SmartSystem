@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 		@filter_company_params = Set.new
 		@filter_category_params = Set.new
 		@all_options = ["Buy", "Sell", "Hold"]
-		@all_categories = ["Product", "Executive", "Acquisition"]
+		@all_categories = ["Product", "Executive", "Acquisition", "Internal Affairs", "Miscellaneous"]
 	end
 
 	def login

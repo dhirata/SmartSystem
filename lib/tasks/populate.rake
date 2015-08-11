@@ -31,11 +31,11 @@ namespace :db do
     derek.save!
 
     # Step 2: Create some companies
-    google = FactoryGirl.create(:company,
-        name: "Google",
-        description: "Google is an American multinational technology company specializing in Internet-related services and products. These include online advertising technologies, search, cloud computing, and software.",
-        ticker: "GOOG",
-        active: true)
+    # google = FactoryGirl.create(:company,
+    #     name: "Google",
+    #     description: "Google is an American multinational technology company specializing in Internet-related services and products. These include online advertising technologies, search, cloud computing, and software.",
+    #     ticker: "GOOG",
+    #     active: true)
 
     apple = FactoryGirl.create(:company,
       name: "Apple",
@@ -43,51 +43,120 @@ namespace :db do
       ticker: "AAPL",
       active: true)
 
-    companies = [google, apple]
+    amazon = FactoryGirl.create(:company,
+        name: "Amazon",
+        description: "Amazon.com, Inc. is an American electronic commerce and cloud computing company with headquarters in Seattle, Washington. It is the largest Internet-based retailer in the United States.",
+        ticker: "AMZN",
+        active: true)
+
+    disney = FactoryGirl.create(:company,
+        name: "Disney",
+        description: "The Walt Disney Company, commonly known as Disney, is an American diversified multinational mass media and entertainment conglomerate headquartered at the Walt Disney Studios in Burbank, California.",
+        ticker: "DIS",
+        active: true)
+
+    netflix = FactoryGirl.create(:company,
+        name: "Netflix",
+        description: "Netflix, Inc. is an American provider of on-demand Internet streaming media available to viewers in all of North America,[5] Australia, New Zealand, South America and parts of Europe (Denmark, France, Germany, The Netherlands, Norway, Sweden, Finland, Switzerland, Austria, Belgium, Luxembourg, Ireland and United Kingdom),[6] and of flat rate DVD-by-mail in the United States, where mailed DVDs and Blu-ray are sent via Permit Reply Mail. ",
+        ticker: "NFLX",
+        active: true)
+
+    chipotle = FactoryGirl.create(:company,
+        name: "Chipotle",
+        description: "Chipotle Mexican Grill, Inc. is a chain of restaurants in the United States, United Kingdom, Canada, Germany, and France, specializing in Mission burritos and tacos.",
+        ticker: "CMG",
+        active: true)
+
+    mcdonalds = FactoryGirl.create(:company,
+        name: "McDonald's",
+        description: "McDonald's is the world's largest chain of hamburger fast food restaurants, serving around 68 million customers daily in 119 countries across 35,000 outlets. ",
+        ticker: "MCD",
+        active: true)
+
+    companies = [apple, amazon, disney, netflix, chipotle, mcdonalds]
 
     # Step 3: For each company, create a set of stock prices
-    gf1 = FactoryGirl.create(:financial_datum, company: google, stock_price: 624.37, data_date: 3.days.ago.to_date)
-    gf2 = FactoryGirl.create(:financial_datum, company: google, stock_price: 627.97, data_date: 2.days.ago.to_date)
-    gf3 = FactoryGirl.create(:financial_datum, company: google, stock_price: 628.00, data_date: 1.days.ago.to_date)
-    gf4 = FactoryGirl.create(:financial_datum, company: google, stock_price: 631.93, data_date: 0.days.ago.to_date)
+    # gf1 = FactoryGirl.create(:financial_datum, company: google, stock_price: 624.37, data_date: 3.days.ago.to_date)
+    # gf2 = FactoryGirl.create(:financial_datum, company: google, stock_price: 627.97, data_date: 2.days.ago.to_date)
+    # gf3 = FactoryGirl.create(:financial_datum, company: google, stock_price: 628.00, data_date: 1.days.ago.to_date)
+    # gf4 = FactoryGirl.create(:financial_datum, company: google, stock_price: 631.93, data_date: 0.days.ago.to_date)
 
     af1 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 124.48, data_date: 3.days.ago.to_date)
     af2 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 122.83, data_date: 2.days.ago.to_date)
     af3 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 123.32, data_date: 1.days.ago.to_date)
     af4 = FactoryGirl.create(:financial_datum, company: apple, stock_price: 122.99, data_date: 0.days.ago.to_date)
 
+    amf1 = FactoryGirl.create(:financial_datum, company: amazon, stock_price: 524.00, data_date: 0.days.ago.to_date)
+    df1 = FactoryGirl.create(:financial_datum, company: disney, stock_price: 111.00, data_date: 0.days.ago.to_date)
+    nf1 = FactoryGirl.create(:financial_datum, company: netflix, stock_price: 123.03, data_date: 0.days.ago.to_date)
+    cf1 = FactoryGirl.create(:financial_datum, company: chipotle, stock_price: 743.90, data_date: 0.days.ago.to_date)
+    mf1 = FactoryGirl.create(:financial_datum, company: mcdonalds, stock_price: 99.36, data_date: 0.days.ago.to_date)
+
     # Step 4: For each company, create some twitter data
-    gt1 = FactoryGirl.create(:twitter_datum, company: google, data_date: Date.today, favorites: 367, retweets: 6956, followers: 12100000, polarity: 0.78)
+    # gt1 = FactoryGirl.create(:twitter_datum, company: google, data_date: Date.today, favorites: 367, retweets: 6956, followers: 12100000, polarity: 0.78)
 
     at1 = FactoryGirl.create(:twitter_datum, company: apple, data_date: Date.today, favorites: 500, retweets: 7000, followers: 13000000, polarity: 0.52)
+    amt1 = FactoryGirl.create(:twitter_datum, company: amazon, data_date: Date.today, favorites: 511, retweets: 7000, followers: 14200000, polarity: 0.72)
+    dt1 = FactoryGirl.create(:twitter_datum, company: disney, data_date: Date.today, favorites: 3, retweets: 3000, followers: 4200000, polarity: 0.92)
+    nt1 = FactoryGirl.create(:twitter_datum, company: netflix, data_date: Date.today, favorites: 4276, retweets: 10000, followers: 1480000, polarity: 0.75)
+    ct1 = FactoryGirl.create(:twitter_datum, company: chipotle, data_date: Date.today, favorites: 130000, retweets: 100000, followers: 638000, polarity: 0.52)
+    mt1 = FactoryGirl.create(:twitter_datum, company: mcdonalds, data_date: Date.today, favorites: 2680, retweets: 768000, followers: 2950000, polarity: 0.32)
 
     # Step 5: Create Smarties
     derek_smarty1 = FactoryGirl.create(:smarty, 
       customer: derek,
       company: apple,
-      description: "Due to the inevitable release of the new iPhone, Apple's stock is primed to grow. Buy now.",
+      description: "Due to the inevitable release of the new iPhone, Apple's stock is primed to grow. Recommended to buy now.",
       analysis: "buy",
-      timestamp: Date.today,
+      timestamp: DateTime.new(2015, 8, 11, 15, 10, 35),
       category: "Product"
     )
 
     derek_smarty2 = FactoryGirl.create(:smarty, 
       customer: derek,
-      company: google,
-      description: "Despite new acquisitions, Google has not made any huge moves. Hold steady for now.",
-      analysis: "hold",
-      timestamp: Date.today,
-      category: "Acquisition"
+      company: apple,
+      description: "Details of the new iPhone have leaked. Apple is reinforcing some weak points with this year’s new iteration.",
+      analysis: "buy",
+      timestamp: DateTime.new(2015, 8, 10, 20, 32, 48),
+      category: "Product"
     )
 
     derek_smarty3 = FactoryGirl.create(:smarty, 
       customer: derek,
-      company: google,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat eros tincidunt cursus auctor. Quisque a erat vel sapien feugiat posuere.",
+      company: apple,
+      description: "Apple announces acquisition of controversal music quality control company.",
       analysis: "sell",
-      timestamp: Date.today,
+      timestamp: DateTime.new(2015, 8, 11, 5, 23, 18),
+      category: "Acquisition"
+    )
+
+    derek_smarty4 = FactoryGirl.create(:smarty, 
+      customer: derek,
+      company: apple,
+      description: "Apple announces new head of board of directors.",
+      analysis: "hold",
+      timestamp: DateTime.new(2015, 8, 11, 12, 34, 59),
       category: "Executive"
     )
+
+
+    # derek_smarty2 = FactoryGirl.create(:smarty, 
+    #   customer: derek,
+    #   company: google,
+    #   description: "Despite new acquisitions, Google has not made any huge moves. Hold steady for now.",
+    #   analysis: "hold",
+    #   timestamp: Date.today,
+    #   category: "Acquisition"
+    # )
+
+    # derek_smarty3 = FactoryGirl.create(:smarty, 
+    #   customer: derek,
+    #   company: google,
+    #   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat eros tincidunt cursus auctor. Quisque a erat vel sapien feugiat posuere.",
+    #   analysis: "sell",
+    #   timestamp: Date.today,
+    #   category: "Executive"
+    # )
 
     # Step 4: Create 120 customers and their associated users
     # 120.times do
