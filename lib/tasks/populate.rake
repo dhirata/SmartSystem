@@ -108,26 +108,26 @@ namespace :db do
       company: apple,
       description: "Due to the inevitable release of the new iPhone, Apple's stock is primed to grow. Recommended to buy now.",
       analysis: "buy",
-      timestamp: DateTime.new(2015, 8, 11, 15, 10, 35),
+      timestamp: DateTime.new(2015, 8, 11, 7, 10, 35),
       category: "Product"
     )
 
     derek_smarty2 = FactoryGirl.create(:smarty, 
       customer: derek,
       company: apple,
-      description: "Details of the new iPhone have leaked. Apple is reinforcing some weak points with this year’s new iteration.",
-      analysis: "buy",
-      timestamp: DateTime.new(2015, 8, 10, 20, 32, 48),
-      category: "Product"
+      description: "Apple announces acquisition of controversal music quality control company.",
+      analysis: "sell",
+      timestamp: DateTime.new(2015, 8, 11, 15, 32, 48),
+      category: "Acquisition"
     )
 
     derek_smarty3 = FactoryGirl.create(:smarty, 
       customer: derek,
       company: apple,
-      description: "Apple announces acquisition of controversal music quality control company.",
-      analysis: "sell",
-      timestamp: DateTime.new(2015, 8, 11, 5, 23, 18),
-      category: "Acquisition"
+      description: "Details of the new iPhone have leaked. Apple is reinforcing some weak points with this year’s new iteration.",
+      analysis: "buy",
+      timestamp: DateTime.new(2015, 8, 10, 5, 23, 18),
+      category: "Product"
     )
 
     derek_smarty4 = FactoryGirl.create(:smarty, 

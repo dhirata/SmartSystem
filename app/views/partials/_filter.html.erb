@@ -21,7 +21,7 @@
 			<% end %>
 			<% if @filter_company_params.empty? %>
 				<!-- Dropdown Trigger -->
-			  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown1'>Companies</a>
+			  	<a class='dropdown-button btn light-blue white-text' href='' data-activates='dropdown1'>Companies</a>
 			 	<!-- Dropdown Structure -->		  		
 			  	<ul id='dropdown1' class='dropdown-content blue-text text-light'>
 			  		<% @companies.each do |company| %>
@@ -32,7 +32,7 @@
 		  	<% end %>
 		  	<% if @filter_category_params.empty? %>
 			  	<!-- Dropdown Trigger -->
-			  	<a class='dropdown-button btn light-blue white-text' href='#' data-activates='dropdown2'>Categories</a>
+			  	<a class='dropdown-button btn light-blue white-text' href='' data-activates='dropdown2'>Categories</a>
 			  	<!-- Dropdown Structure -->
 			  	<ul id='dropdown2' class='dropdown-content blue-text text-light'>
 			  		<% @all_categories.each do |category| %>
