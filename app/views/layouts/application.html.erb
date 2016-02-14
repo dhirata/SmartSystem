@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>SmartSystem</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title>SMART</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-</body>
+  <body class = "grey lighten-2">
+    <div id="title_area">
+      <%= link_to image_tag(''), companies_path %>
+    </div>
+    <%= render :partial => "partials/nav" %>
+    
+    <div class="container">
+      <div class="col s8" id="main_content">
+        <%= render :partial => "partials/flash" %>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+    </footer> 
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

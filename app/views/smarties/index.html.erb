@@ -1,0 +1,23 @@
+<h1>Listing smarties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @smarties.each do |smarty| %>
+      <tr>
+        <td><%= link_to 'Show', smarty %></td>
+        <td><%= link_to 'Edit', edit_smarty_path(smarty) %></td>
+        <td><%= link_to 'Destroy', smarty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Smarty', new_smarty_path %>

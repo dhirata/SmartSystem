@@ -1,0 +1,66 @@
+<div class = "col s8">
+	<% @smarties.each do |smarty| %>
+		<% if smarty.analysis == "buy" %>
+			<%fontcolor = "green"%>
+		<% elsif smarty.analysis == "hold" %>
+			<% fontcolor = "gold" %>
+		<% elsif smarty.analysis == "sell" %>
+			<% fontcolor = "red" %>
+		<% else %>
+			<% fontcolor = "black" %>
+		<% end %>
+
+		<% if smarty.company.twitter_data.first.polarity < 0.5 %>
+			<% pcolor = "red" %>
+		<% else %>
+			<% pcolor = "green" %>
+		<% end %>
+
+		<% if smarty.company.name == "Apple" %>
+			<% icon = "appleIcon.png" %>
+			<% graph = "AppleData.png" %>
+		<% elsif smarty.company.name == "Amazon" %>
+			<% icon = "amazonIcon.png" %>
+			<% graph = "AmazonData.png" %>
+		<% elsif smarty.company.name == "Chipotle" %>
+			<% icon = "chipotleIcon.png" %>
+			<% graph = "ChipotleData.png" %>
+		<% elsif smarty.company.name == "Disney" %>
+			<% icon = "disneyIcon.png" %>
+			<% graph = "DisneyData.png" %>
+		<% elsif smarty.company.name == "Netflix" %>
+			<% icon = "netflixIcon.png" %>
+			<% graph = "NetflixData.png" %>
+		<% elsif smarty.company.name == "McDonald's" %>
+			<% icon = "mcdonaldsIcon.png" %>
+			<% graph = "McDonaldsData.png" %>
+		<% end %>
+		<div class = "card white">
+			<div class = "card-content blue-grey-text text-darken-4">
+				<span class="card-title activator blue-grey-text text-darken-4"><img src=<%= icon %> alt="" class = "circle responsive-img icon left"><%= smarty.company.name %> [<%= smarty.company.ticker %> $<%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">more_vert</i>
+				</span>
+				<br/>
+				<br/>
+        		<p><b>Category: </b><%= smarty.category %></p>
+        		<p><b>Analysis: <font color = <%=fontcolor%>><%= smarty.analysis.upcase %></font></b></p>
+        		<p><b>Created At: </b><%= smarty.timestamp %></p>
+  				<p><%= smarty.description %></p>
+			</div>
+			<div class = "card-reveal">
+			  <span class = "card-title blue-grey-text text-darken-4"><%= smarty.company.name %> [$ <%= smarty.company.current_financial_data.stock_price %>]<i class = "material-icons right">close</i></span>
+			  <p><b>Followers: </b><%= smarty.company.twitter_data.first.followers %></p>
+			  <p><b>Favorites: </b><%= smarty.company.twitter_data.first.favorites %></p>
+			  <p><b>Retweets: </b><%= smarty.company.twitter_data.first.retweets %></p>
+			  <p><b>Polarity: </b><font color = <%= pcolor %>><%= smarty.company.twitter_data.first.polarity %></font></p>
+			  <img src = <%= graph %> alt = "" class = "responsive-img center-align">
+			</div>
+			<div class="card-action">
+				<div class =  "row center-align">
+	  				<a href="#" class = "blue-text">Download PDF</a>
+					<a href="#" class = "blue-text">Download Excel</a>
+					<a href="#" class = "blue-text">Save Smartie For Later</a>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

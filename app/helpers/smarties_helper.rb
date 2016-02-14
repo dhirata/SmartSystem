@@ -1,0 +1,2 @@
+module SmartiesHelper
+end
